@@ -13,4 +13,7 @@ Usage: ./crobat.cr [arguments]
     -o FORMAT, --output format       Output format. (JSON, TXT, CSV)
     -f FILE, --file path             Output file.
     -h, --help                       Show help.
+
+
+E.g ./crobat_client -d twitter.com -s subdomain
 ```
