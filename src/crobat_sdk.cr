@@ -1,3 +1,5 @@
+require "http/client"
+require "json"
 
 module Crobat
     class CrobatSDK

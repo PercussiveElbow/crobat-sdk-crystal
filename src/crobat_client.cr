@@ -1,5 +1,3 @@
-require "http/client"
-require "json"
 require "option_parser"
 require "./crobat_sdk"
 
