@@ -4,6 +4,8 @@ Crystal client for [SonarSearch/Crobat](https://github.com/Cgboal/SonarSearch)
 
 Binary releases available [here](https://github.com/PercussiveElbow/crobat-client-crystal/releases)
 
+To grab the latest release `wget https://github.com/PercussiveElbow/crobat-client-crystal/releases/latest/download/crobat_client && chmod +x ./crobat_client`
+
 ## Usage
 
 ```
