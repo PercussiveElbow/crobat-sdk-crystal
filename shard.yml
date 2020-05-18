@@ -4,6 +4,10 @@ version: 0.1.0
 authors:
   - PercussiveElbow <PercussiveElbow@users.noreply.github.com>
 
+targets: 
+  crobat-sdk:
+    main: src/crobat_sdk.cr
+
 crystal: 0.34.0
 
 license: MIT
