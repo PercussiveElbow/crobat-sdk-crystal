@@ -1,6 +1,6 @@
-# Crobat Client - Crystal
+# Crobat SDK - Crystal
 
-Crystal client for [SonarSearch/Crobat](https://github.com/Cgboal/SonarSearch)
+Crystal SDK and command line client for [SonarSearch/Crobat](https://github.com/Cgboal/SonarSearch).
 
 ## Download
 Binary releases available [here](https://github.com/PercussiveElbow/crobat-sdk-crystal/releases).
@@ -23,12 +23,27 @@ Usage: ./crobat.cr [arguments]
 E.g ./crobat_client -d twitter.com -s subdomain
 ```
 
+
 ## Usage (SDK)
-In your shards.yml:
+Add the SDK as a dependency within your _shards.yml_:
 ```
 dependencies:
   crobat-sdk:
       github: percussiveelbow/crobat-sdk-crystal
 ```
-Then simply add `require "crobat/crobat_sdk"` at the top of your file.
-The client object can then by accessed via  `Crobat::CrobatSDK.new(URL)`. 
+Then simply  `require "crobat/crobat_sdk"` at the top of your file.
+The client object can then be instantiated and used like below. 
+```
+require "crobat/crobat_sdk"
+
+client = Crobat::CrobatSDK.new("https://sonar.omnisint.io")
+
+# Retrieving subdomains via SDK
+puts(client.retrieve_subdomains("twitter.com"))
+
+# Retrieving all results via SDK
+puts(client.retrieve_all("twitter.com"))
+
+# Retrieving tlds via SDK
+puts(client.retrieve_tlds("twitter.com"))
+```
