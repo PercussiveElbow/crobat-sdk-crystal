@@ -3,7 +3,6 @@
 Crystal SDK and command line client for [SonarSearch/Crobat](https://github.com/Cgboal/SonarSearch).
 
 ## Download
----
 Prebuilt binary releases available [here](https://github.com/PercussiveElbow/crobat-sdk-crystal/releases).
 
 To grab the latest release:
@@ -11,7 +10,6 @@ To grab the latest release:
 ```wget https://github.com/PercussiveElbow/crobat-sdk-crystal/releases/latest/download/crobat_client && chmod +x ./crobat_client```
 
 ## Usage - Client
----
 
 ### Client
 
@@ -34,7 +32,6 @@ To build and use the Docker container:
 ```
 
 ## Usage - SDK
----
 Add the SDK as a dependency within your _shards.yml_:
 ```
 dependencies:
@@ -60,7 +57,6 @@ puts(client.retrieve_tlds("twitter.com"))
 ```
 
 ## Building manually
----
 ### Building the client
 ```
 crystal build --static --release src/crobat_client.cr
