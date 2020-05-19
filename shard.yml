@@ -8,6 +8,9 @@ targets:
   crobat:
     main: src/crobat_sdk.cr
 
+description: |
+  Crystal SDK for the Crobat API.
+
 crystal: 0.34.0
 
 license: MIT
