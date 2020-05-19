@@ -35,7 +35,7 @@ To build and use the Docker container:
 Add the SDK as a dependency within your _shards.yml_:
 ```
 dependencies:
-  crobat-sdk:
+  crobat:
       github: percussiveelbow/crobat-sdk-crystal
 ```
 Then simply  `require "crobat/crobat_sdk"` at the top of your file.
