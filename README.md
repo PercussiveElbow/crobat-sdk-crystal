@@ -2,11 +2,14 @@
 
 Crystal client for [SonarSearch/Crobat](https://github.com/Cgboal/SonarSearch)
 
-Binary releases available [here](https://github.com/PercussiveElbow/crobat-client-crystal/releases)
+## Download
+Binary releases available [here](https://github.com/PercussiveElbow/crobat-sdk-crystal/releases).
 
-To grab the latest release `wget https://github.com/PercussiveElbow/crobat-client-crystal/releases/latest/download/crobat_client && chmod +x ./crobat_client`
+To grab the latest release:
 
-## Usage
+```wget https://github.com/PercussiveElbow/crobat-sdk-crystal/releases/latest/download/crobat_client && chmod +x ./crobat_client```
+
+## Usage (Client)
 
 ```
 Usage: ./crobat.cr [arguments]
@@ -19,3 +22,13 @@ Usage: ./crobat.cr [arguments]
 
 E.g ./crobat_client -d twitter.com -s subdomain
 ```
+
+## Usage (SDK)
+In your shards.yml:
+```
+dependencies:
+  crobat-sdk:
+      github: percussiveelbow/crobat-sdk-crystal
+```
+Then simply add `require "crobat/crobat_sdk"` at the top of your file.
+The client object can then by accessed via  `Crobat::CrobatSDK.new(URL)`. 

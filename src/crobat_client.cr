@@ -66,11 +66,11 @@ def cli
     client = Crobat::CrobatSDK.new("https://sonar.omnisint.io")
     case search_type.downcase
     when "all"
-      results = client.retrieve_all(target, 0)
+      results = client.retrieve_all(target)
     when "tld"
-      results = client.retrieve_tlds(target, 0)
+      results = client.retrieve_tlds(target)
     when "subdomain"
-      results = client.retrieve_subdomains(target, 0)
+      results = client.retrieve_subdomains(target)
     else
       puts("Invalid search type supplied. Valid search types: SUBDOMAIN, ALL, TLD")
     end

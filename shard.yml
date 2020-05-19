@@ -5,7 +5,7 @@ authors:
   - PercussiveElbow <PercussiveElbow@users.noreply.github.com>
 
 targets: 
-  crobat-sdk:
+  crobat:
     main: src/crobat_sdk.cr
 
 crystal: 0.34.0

@@ -10,7 +10,7 @@ module Crobat
         end
         end
     
-        def retrieve_subdomains(domain : String, page : Int) : Array(String)
+        def retrieve_subdomains(domain : String, page : Int = 0) : Array(String)
         begin
             page_query = page > 0 ? "?page=#{page.to_s}" : ""
             resp = HTTP::Client.get("#{@api_url}/subdomains/#{domain}#{page_query}")
@@ -26,7 +26,7 @@ module Crobat
         end
         end
     
-        def retrieve_tlds(search_query : String, page : Int) : Array(String)
+        def retrieve_tlds(search_query : String, page : Int = 0) : Array(String)
         begin
             page_query = page > 0 ? "?page=#{page.to_s}" : ""
             resp = HTTP::Client.get("#{@api_url}/tlds/#{search_query}#{page_query}")
@@ -42,7 +42,7 @@ module Crobat
         end
         end
     
-        def retrieve_all(search_query : String, page : Int) : Array(SonarAllResult)
+        def retrieve_all(search_query : String, page : Int = 0) : Array(SonarAllResult)
         begin
             page_query = page > 0 ? "?page=#{page.to_s}" : ""
             resp = HTTP::Client.get( "#{@api_url}/all/#{search_query}#{page_query}")
