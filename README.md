@@ -14,7 +14,7 @@ To grab the latest release:
 ```
 Usage: ./crobat.cr [arguments]
     -d DOMAIN, --domain              Target domain.
-    -s TYPE, --type                  Search type. (SUBDOMAIN, ALL, TLD
+    -s TYPE, --type                  Search type. (SUBDOMAIN, ALL, TLD)
     -o FORMAT, --output format       Output format. (JSON, TXT, CSV)
     -f FILE, --file path             Output file.
     -h, --help                       Show help.

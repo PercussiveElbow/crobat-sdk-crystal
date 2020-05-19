@@ -53,9 +53,9 @@ def cli
   OptionParser.parse do |parser|
     parser.banner = "Crobat Client.\nUsage: ./crobat.cr [arguments]"
     parser.on("-d DOMAIN", "--domain", "Target domain.") { |domain| target = domain  }
-    parser.on("-s TYPE","--type", "Search type. (SUBDOMAIN, ALL, TLD") { |type| search_type = type }
-    parser.on("-o FORMAT", "--output format","Output format. (JSON, TXT, CSV)") { |format| output_format = format}
-    parser.on("-f FILE", "--file path","Output file.") { |file| output_path = file}
+    parser.on("-s TYPE","--type", "Search type. (SUBDOMAIN, ALL, TLD)") { |type| search_type = type }
+    parser.on("-f FORMAT", "--output format","Output format. (JSON, TXT, CSV)") { |format| output_format = format}
+    parser.on("-o FILE", "--file path","Output file.") { |file| output_path = file}
     parser.on("-h", "--help", "Show help.") { puts parser }
   end
 
