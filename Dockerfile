@@ -1,5 +1,6 @@
 FROM crystallang/crystal:latest-alpine AS builder
 RUN apk --no-cache add ca-certificates
+RUN apk update && apk upgrade
 WORKDIR /app
 COPY . /app
 RUN crystal build --static --release /app/src/crobat_client.cr 
