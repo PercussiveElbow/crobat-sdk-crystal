@@ -54,8 +54,8 @@ def cli
     parser.banner = "Crobat Client.\nUsage: ./crobat.cr [arguments]"
     parser.on("-d DOMAIN", "--domain", "Target domain.") { |domain| target = domain  }
     parser.on("-s TYPE","--type", "Search type. (SUBDOMAIN, ALL, TLD)") { |type| search_type = type }
-    parser.on("-f FORMAT", "--format","Output format. (JSON, TXT, CSV)") { |format| output_format = format}
-    parser.on("-o FILE", "--output","Output file.") { |file| output_path = file}
+    parser.on("-f FORMAT", "--format","File output format. (JSON, TXT, CSV)") { |format| output_format = format}
+    parser.on("-o FILE", "--output","File output location.") { |file| output_path = file}
     parser.on("-h", "--help", "Show help.") { puts parser }
   end
 

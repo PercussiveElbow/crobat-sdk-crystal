@@ -17,10 +17,9 @@ To grab the latest release:
 Usage: ./crobat_client [arguments]
     -d DOMAIN, --domain              Target domain.
     -s TYPE, --type                  Search type. (SUBDOMAIN, ALL, TLD)
-    -f FORMAT, --format              Output format. (JSON, TXT, CSV)
-    -o FILE, --output                Output file.
+    -f FORMAT, --format              File output format. (JSON, TXT, CSV)
+    -o FILE, --output                File output location.
     -h, --help                       Show help.
-
 
 E.g ./crobat_client -d twitter.com -s subdomain
 ```

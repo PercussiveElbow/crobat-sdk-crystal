@@ -1,5 +1,5 @@
 name: crobat
-version: 0.1.3
+version: 1.0.0
 
 authors:
   - PercussiveElbow <PercussiveElbow@users.noreply.github.com>
@@ -11,6 +11,6 @@ targets:
 description: |
   Crystal SDK for the Crobat API.
 
-crystal: 0.34.0
+crystal: 0.35.1
 
 license: MIT
