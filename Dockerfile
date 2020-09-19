@@ -8,4 +8,5 @@ FROM busybox:latest
 WORKDIR /app
 COPY --from=builder  /app/crobat_client /app/crobat_client
 COPY --from=builder /etc/ssl/certs /etc/ssl/certs
+RUN ln -s /etc/ssl/certs/ca-certificates.crt /etc/ssl/cert.pem
 ENTRYPOINT ["/app/crobat_client"]
