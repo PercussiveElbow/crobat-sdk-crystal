@@ -13,7 +13,7 @@ jobs:
     - name: Install dependencies
       run: shards install
     - name: Build
-      run: crystal build -Dpreview_mt --error-trace --release src/crobat_client.cr
+      run: crystal build -Dpreview_mt --static --error-trace --release src/crobat_client.cr
       id: build
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@master
@@ -27,8 +27,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: ${{ steps.ver_tag.outputs.new_tag }}
+        release_name: ${{ steps.ver_tag.outputs.new_tag }}
         draft: false
         prerelease: false
     - name: Upload Release Asset
