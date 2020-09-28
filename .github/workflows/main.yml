@@ -13,7 +13,7 @@ jobs:
     - name: Install dependencies
       run: shards install
     - name: Build
-      run: crystal build -Dpreview_mt --static --error-trace --release src/crobat_client.cr
+      run: crystal build -Dpreview_mt --error-trace --release src/crobat_client.cr
       id: build
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@master
