@@ -4,10 +4,15 @@ Crystal SDK and command line client for [SonarSearch/Crobat](https://github.com/
 
 ## Download
 Prebuilt binary releases available [here](https://github.com/PercussiveElbow/crobat-sdk-crystal/releases).
+Preuilt Docker container available [here](https://github.com/users/PercussiveElbow/packages/container/package/crobat).
 
 To grab the latest release:
 
 ```wget https://github.com/PercussiveElbow/crobat-sdk-crystal/releases/latest/download/crobat_client && chmod +x ./crobat_client```
+
+To run the latest Docker container (~20MB)
+```sudo docker run -it ghcr.io/percussiveelbow/crobat:latest```
+
 
 ## Usage - Client
 
