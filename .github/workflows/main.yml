@@ -68,4 +68,4 @@ jobs:
       with:
         push: true
         # tags: <org-name>/<repo-name>/<app-name>:${{ env.IMAGE_TAG }}
-        tags: ghcr.io/${{ github.repository_owner }}/<image-name>:${{ env.IMAGE_TAG }}
+        tags: ghcr.io/${{ github.repository_owner }}/crobat:${{ env.IMAGE_TAG }}
