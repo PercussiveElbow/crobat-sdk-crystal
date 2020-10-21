@@ -4,7 +4,7 @@ Crystal SDK and command line client for [SonarSearch/Crobat](https://github.com/
 
 ## Download
 Prebuilt binary releases available [here](https://github.com/PercussiveElbow/crobat-sdk-crystal/releases).
-Preuilt Docker container available [here](https://github.com/users/PercussiveElbow/packages/container/package/crobat).
+Prebuilt Docker container available [here](https://github.com/users/PercussiveElbow/packages/container/package/crobat).
 
 To grab the latest release:
 
@@ -20,19 +20,19 @@ To run the latest Docker container (~20MB)
 
 ```
 Usage: ./crobat_client [arguments]
-    -d DOMAIN, --domain              Target domain.
-    -s TYPE, --type                  Search type. (SUBDOMAIN, ALL, TLD)
+    -q QUERY, --query                Target domain, IP or IP range to query.
+    -s TYPE, --type                  Search type. (SUBDOMAIN, ALL, REVERSE TLD)
     -f FORMAT, --format              File output format. (JSON, TXT, CSV)
     -o FILE, --output                File output location.
     -h, --help                       Show help.
 
-E.g ./crobat_client -d twitter.com -s subdomain
+E.g ./crobat_client -q twitter.com -s subdomain
 ```
 
 ### Client - Docker
 To build and use the Docker container:
 ```
- sudo docker build . -t crobat && sudo docker run -it crobat -d twitter.com -s subdomain
+ sudo docker build . -t crobat && sudo docker run -it crobat -q twitter.com -s subdomain
 ```
 
 ## Usage - SDK
@@ -58,6 +58,12 @@ puts(client.retrieve_all("twitter.com"))
 
 # Retrieving tlds via SDK
 puts(client.retrieve_tlds("twitter.com"))
+
+# Retrieving reverse info for an IP via SDK
+puts(client.retrieve_reverse("8.8.8.8"))
+
+# Retrieving reverse info for an IP range via SDK
+puts(client.retrieve_reverse_range("95.138.157.0/16"))
 ```
 
 ## Building manually

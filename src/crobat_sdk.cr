@@ -16,7 +16,7 @@ module Crobat
                 resp = HTTP::Client.get("#{@api_url}/subdomains/#{domain}#{page_query}")
                 if resp.status_code == 200
                     items = Array(String).from_json(resp.body)
-                    return items.size()>=999 ? items + retrieve_subdomains(domain,page+1) : items
+                    return items.size()>=9999 ? items + retrieve_subdomains(domain,page+1) : items
                 else
                     raise CrobatQueryException.new("Error querying Subdomains API Endpoint #{@api_url} with domain #{domain}. Status code #{resp.status_code}")
                 end
@@ -32,7 +32,7 @@ module Crobat
                 resp = HTTP::Client.get("#{@api_url}/tlds/#{search_query}#{page_query}")
                 if resp.status_code == 200
                     items = Array(String).from_json(resp.body)
-                    return items.size()>=999 ? items + retrieve_tlds(search_query,page+1) : items
+                    return items.size()>=9999 ? items + retrieve_tlds(search_query,page+1) : items
                 else
                     raise CrobatQueryException.new("Error querying TLD API Endpoint #{@api_url} with TLD #{search_query}. Status code #{resp.status_code}")
                 end
@@ -48,7 +48,7 @@ module Crobat
                 resp = HTTP::Client.get( "#{@api_url}/all/#{search_query}#{page_query}")
                 if resp.status_code == 200
                     items = Array(SonarAllResult).from_json(resp.body)
-                    if items.size()>=999
+                    if items.size()>=9999
                         recursive_items = retrieve_all(search_query,page+1)
                         return recursive_items.size()> 0 ? items + recursive_items :  items
                     else
@@ -62,6 +62,40 @@ module Crobat
             rescue ex : Exception
                 print(ex)
                 return [] of SonarAllResult
+            end
+        end
+
+        def retrieve_reverse_range(search_query : String, page : Int = 0) : Hash(String,Array(String))
+            begin
+                page_query = page > 0 ? "?page=#{page.to_s}" : ""
+                resp = HTTP::Client.get( "#{@api_url}/reverse/#{search_query}#{page_query}")
+                if resp.status_code == 200
+                    return Hash(String,Array(String)).from_json(resp.body)
+                else
+                    puts(resp.headers)
+                    raise CrobatQueryException.new("Error querying Reverse API Endpoint #{@api_url} with query #{search_query}. Status code #{resp.status_code}")
+                    return Hash(String,Array(String)).new
+                end
+            rescue ex : Exception 
+                print(ex)
+                return Hash(String,Array(String)).new
+            end
+        end
+
+        def retrieve_reverse(search_query : String, page : Int = 0) : Array(String)
+            begin
+                page_query = page > 0 ? "?page=#{page.to_s}" : ""
+                resp = HTTP::Client.get( "#{@api_url}/reverse/#{search_query}#{page_query}")
+                if resp.status_code == 200
+                    return Array(String).from_json(resp.body)
+                else
+                    puts(resp.headers)
+                    raise CrobatQueryException.new("Error querying Reverse API Endpoint #{@api_url} with query #{search_query}. Status code #{resp.status_code}")
+                    return [] of String
+                end
+            rescue ex : Exception 
+                print(ex)
+                return [] of String
             end
         end
     
